@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Turso Per User Starter",
-  description: "Database per user starter with Turso, Clerk, and SQLite",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
+  title: "Inspectra | Real-time Web Component Inspector",
+  description: "Next-generation VS Code extension for real-time inspection, debugging, and analysis of modern web apps.",
 };
 
 export default function RootLayout({
@@ -17,12 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`bg-rich-black overscroll-none ${inter.className}`}>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className="scroll-smooth">
+      <body className={`bg-rich-black overscroll-none ${inter.className}`}>
+        {children}
+      </body>
+    </html>
   );
 }
