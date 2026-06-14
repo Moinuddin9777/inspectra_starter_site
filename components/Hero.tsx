@@ -46,10 +46,6 @@ export function Hero() {
         transition={{ duration: 0.8 }}
         className="text-center max-w-4xl"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border-white/10 text-xs font-medium text-brand-primary mb-6">
-          <Terminal className="w-3 h-3" />
-          <span>v1.4.0 — Ranked Text Search is here</span>
-        </div>
         
         <h1 className="text-6xl md:text-8xl font-black tracking-tight text-white mb-6 leading-[1.1]">
           Debug at the speed of <span className="text-transparent bg-clip-text bg-futuristic-glow text-glow">Thought.</span>
