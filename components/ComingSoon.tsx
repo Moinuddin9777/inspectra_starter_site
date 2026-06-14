@@ -78,8 +78,8 @@ export function ComingSoon() {
           The Future of <span className="text-transparent bg-clip-text bg-futuristic-glow text-glow">Application Intelligence.</span>
         </h2>
         <p className="text-white/50 text-lg max-w-2xl mx-auto">
-          We're evolving from an inspector into an AI-powered Engineering Copilot. 
-          Here's what is coming next to your workspace.
+          We&apos;re evolving from an inspector into an AI-powered Engineering Copilot. 
+          Here&apos;s what is coming next to your workspace.
         </p>
       </div>
 
