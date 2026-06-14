@@ -1,10 +1,39 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight, Play, Terminal, Mail } from "lucide-react";
+import { ChevronRight, Play, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const heroGifs = [
+  "/assets/inspector_drafted.gif",
+  "/assets/preview_panel_edited.gif",
+  "/assets/debug_drafted.gif",
+  "/assets/code_coverage_drafted.gif",
+  "/assets/network_drafted.gif",
+  "/assets/performance_drafted.gif",
+  "/assets/accessibility_drafted.gif",
+  "/assets/cookies_drafted.gif"
+];
+
 export function Hero() {
+  const [currentGif, setCurrentGif] = useState(0);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "0px", amount: 0.1 });
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isInView) {
+      interval = setInterval(() => {
+        setCurrentGif((prev) => (prev + 1) % heroGifs.length);
+      }, 4000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isInView]);
+
   return (
     <section className="relative min-h-screen pt-32 flex flex-col items-center justify-center overflow-hidden px-6">
       {/* Background Glows */}
@@ -62,19 +91,29 @@ export function Hero() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 40 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
+        ref={containerRef}
+        initial={{ opacity: 0, scale: 0.95, y: 100 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative w-full max-w-6xl mx-auto"
       >
         <div className="glass rounded-3xl p-2 border-white/10 shadow-2xl relative group overflow-hidden">
           <div className="absolute inset-0 bg-futuristic-glow rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
           <div className="relative aspect-[16/10] w-full bg-slate-900 rounded-2xl z-10 overflow-hidden border border-white/5">
-            <img 
-              src="/assets/hero.gif" 
-              alt="Inspectra Demo" 
-              className="w-full h-full object-cover object-center"
-            />
+            {isInView ? (
+              <motion.img 
+                key={heroGifs[currentGif]}
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                src={heroGifs[currentGif]} 
+                alt="Inspectra Demo" 
+                className="w-full h-full object-cover object-center"
+              />
+            ) : (
+              <div className="w-full h-full bg-slate-900" />
+            )}
           </div>
         </div>
       </motion.div>
