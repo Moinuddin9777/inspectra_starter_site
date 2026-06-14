@@ -1,4 +1,4 @@
-# PRODUCT DOCUMENTATION — [PROJECT NAME TBD]
+# PRODUCT DOCUMENTATION — [INSPECTRA]
 
 **Date:** 20 April 2026
 
@@ -117,7 +117,7 @@ A next-generation, production-grade VS Code extension for real-time inspection, 
 ## 12. How to Use This Document
 - Pass this file to any AI or product naming tool for creative, market-ready suggestions.
 - Use the architecture and feature breakdown for marketing, documentation, or onboarding.
-- Replace [PROJECT NAME TBD] with your chosen product name/title after review.
+- Replace [INSPECTRA] with your chosen product name/title after review.
 
 ---
 

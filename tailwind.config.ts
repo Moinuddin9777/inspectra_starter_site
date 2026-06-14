@@ -9,11 +9,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          primary: "#4ff8d2", // Aquamarine
+          primary: "#3b82f6", // Blue
           secondary: "#7c3aed", // Violet
           accent: "#ec4899", // Pink
         },
-        aquamarine: "#4ff8d2",
+        aquamarine: "#3b82f6",
         "rich-black": "#011618",
         "brunswick-green": "#154F47",
         background: "#020617", // Deep slate/black
@@ -27,7 +27,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "futuristic-glow": "linear-gradient(135deg, #4ff8d2 0%, #7c3aed 100%)",
+        "futuristic-glow": "linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%)",
       },
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",

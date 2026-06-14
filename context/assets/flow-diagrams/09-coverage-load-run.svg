@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="600" fill="#101826"/>
+  <text x="550" y="42" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700">Coverage Load and Run</text>
+  <text x="550" y="66" text-anchor="middle" fill="#8ea0b8" font-size="13">Load existing reports or execute tests, then normalize and visualize</text>
+
+  <rect x="70" y="110" width="220" height="70" rx="8" fill="#24203a" stroke="#8f7bff"/>
+  <text x="180" y="140" text-anchor="middle" fill="#c7bbff" font-size="14" font-weight="600">Coverage UI</text>
+  <text x="180" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">loadCoverage | runCoverage</text>
+
+  <polygon points="390,145 470,110 550,145 470,180" fill="#2c2a18" stroke="#e5c15b"/>
+  <text x="470" y="142" text-anchor="middle" fill="#ffe08c" font-size="11">Command</text>
+  <text x="470" y="157" text-anchor="middle" fill="#ffe08c" font-size="11">Type?</text>
+
+  <rect x="640" y="90" width="220" height="60" rx="8" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="750" y="115" text-anchor="middle" fill="#8ff2ea" font-size="13" font-weight="600">Load Path</text>
+  <text x="750" y="135" text-anchor="middle" fill="#9ba8ba" font-size="11">findCoverageFiles()</text>
+
+  <rect x="640" y="165" width="220" height="85" rx="8" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="750" y="192" text-anchor="middle" fill="#8ff2ea" font-size="13" font-weight="600">Run Path</text>
+  <text x="750" y="212" text-anchor="middle" fill="#9ba8ba" font-size="11">detect test framework</text>
+  <text x="750" y="230" text-anchor="middle" fill="#9ba8ba" font-size="11">spawn test command (120s)</text>
+
+  <line x1="550" y1="128" x2="640" y2="120" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="640,120 629,114 629,126" fill="#7fc7ff"/>
+  <line x1="550" y1="162" x2="640" y2="205" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="640,205 628,201 633,212" fill="#7fc7ff"/>
+
+  <rect x="180" y="300" width="760" height="200" rx="10" fill="#0d1422" stroke="#33455f"/>
+  <text x="210" y="332" fill="#9fb2ca" font-size="14" font-weight="600">Unified post-processing pipeline</text>
+  <text x="210" y="360" fill="#9fb2ca" font-size="12">1. autoDetectAndParse() supports Istanbul, LCOV, Cobertura.</text>
+  <text x="210" y="386" fill="#9fb2ca" font-size="12">2. buildReport() + buildFolderTree() create file/folder aggregates and hotspots.</text>
+  <text x="210" y="412" fill="#9fb2ca" font-size="12">3. attach getGitInfo() branch/commit metadata.</text>
+  <text x="210" y="438" fill="#9fb2ca" font-size="12">4. sendCoverageToViewers() transmits summary; file details loaded on demand.</text>
+  <text x="210" y="464" fill="#9fb2ca" font-size="12">5. UI stores trend locally, computes KPIs, and supports drill-down source lines.</text>
+
+  <rect x="70" y="530" width="960" height="50" rx="10" fill="#0d1422" stroke="#33455f"/>
+  <text x="100" y="560" fill="#9fb2ca" font-size="12">Optimization: only file-level aggregates are pushed initially; source line detail is fetched when a file row is selected.</text>
+</svg>

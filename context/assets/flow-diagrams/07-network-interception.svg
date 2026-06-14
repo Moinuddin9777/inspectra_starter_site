@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="560" fill="#101826"/>
+  <text x="550" y="42" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700">Network Interception Flow</text>
+  <text x="550" y="66" text-anchor="middle" fill="#8ea0b8" font-size="13">Fetch/XHR capture, bounded buffering, pause/resume controls</text>
+
+  <rect x="70" y="120" width="220" height="80" rx="8" fill="#2e1f1f" stroke="#ff7d7d"/>
+  <text x="180" y="150" text-anchor="middle" fill="#ffb0b0" font-size="14" font-weight="600">App Requests</text>
+  <text x="180" y="170" text-anchor="middle" fill="#9ba8ba" font-size="11">fetch + XHR send</text>
+  <text x="180" y="186" text-anchor="middle" fill="#9ba8ba" font-size="11">request/response lifecycle</text>
+
+  <rect x="380" y="105" width="320" height="110" rx="8" fill="#2e1f1f" stroke="#ff7d7d"/>
+  <text x="540" y="138" text-anchor="middle" fill="#ffb0b0" font-size="15" font-weight="700">Agent network.ts</text>
+  <text x="540" y="160" text-anchor="middle" fill="#9ba8ba" font-size="12">Capture metadata + cloned response body (max 100KB)</text>
+  <text x="540" y="182" text-anchor="middle" fill="#9ba8ba" font-size="12">emitEntry() + local FIFO buffer (cap 500)</text>
+
+  <line x1="290" y1="160" x2="380" y2="160" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="380,160 369,154 369,166" fill="#7fc7ff"/>
+
+  <rect x="380" y="255" width="320" height="120" rx="8" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="540" y="286" text-anchor="middle" fill="#8ff2ea" font-size="15" font-weight="700">Host Relay</text>
+  <text x="540" y="309" text-anchor="middle" fill="#9ba8ba" font-size="12">agent:network-entry -> extension:network-entry</text>
+  <text x="540" y="331" text-anchor="middle" fill="#9ba8ba" font-size="12">viewer event wci:network-entry</text>
+  <text x="540" y="353" text-anchor="middle" fill="#9ba8ba" font-size="12">commands: pause, resume, clear</text>
+
+  <rect x="810" y="255" width="220" height="120" rx="8" fill="#24203a" stroke="#8f7bff"/>
+  <text x="920" y="286" text-anchor="middle" fill="#c7bbff" font-size="15" font-weight="700">UI useNetwork</text>
+  <text x="920" y="309" text-anchor="middle" fill="#9ba8ba" font-size="12">append entries, remap IDs</text>
+  <text x="920" y="331" text-anchor="middle" fill="#9ba8ba" font-size="12">UI FIFO cap 500</text>
+  <text x="920" y="353" text-anchor="middle" fill="#9ba8ba" font-size="12">NetworkTab visualization</text>
+
+  <line x1="700" y1="315" x2="810" y2="315" stroke="#ffb36b" stroke-width="2"/>
+  <polygon points="810,315 799,309 799,321" fill="#ffb36b"/>
+
+  <rect x="70" y="255" width="250" height="120" rx="8" fill="#0d1422" stroke="#33455f"/>
+  <text x="195" y="285" text-anchor="middle" fill="#9fb2ca" font-size="13" font-weight="600">Pause Behavior</text>
+  <text x="95" y="310" fill="#9fb2ca" font-size="12">- paused: store locally only</text>
+  <text x="95" y="332" fill="#9fb2ca" font-size="12">- resumed: emit new entries again</text>
+  <text x="95" y="354" fill="#9fb2ca" font-size="12">- clear: wipe agent + UI buffers</text>
+
+  <rect x="70" y="430" width="960" height="90" rx="10" fill="#0d1422" stroke="#33455f"/>
+  <text x="100" y="462" fill="#9fb2ca" font-size="13" font-weight="600">Key Constraints</text>
+  <text x="100" y="488" fill="#9fb2ca" font-size="12">Bounded memory by design: response body capped to 100KB per entry and rolling buffers capped at 500 entries on both agent and UI sides.</text>
+</svg>

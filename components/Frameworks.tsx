@@ -52,6 +52,7 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded bg-brand-primary" />
           <span className="text-lg font-bold tracking-tighter text-white uppercase">Inspectra</span>
+          <span className="bg-brand-primary/20 text-brand-primary text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ml-1 border border-brand-primary/30">Beta</span>
         </div>
         
         <nav className="flex gap-10 text-sm font-medium text-white/40" aria-label="Footer">

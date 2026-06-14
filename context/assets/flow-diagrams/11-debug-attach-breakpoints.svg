@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="620" fill="#101826"/>
+  <text x="550" y="42" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700">Debug Attach and Breakpoints</text>
+  <text x="550" y="66" text-anchor="middle" fill="#8ea0b8" font-size="13">Node Inspector attach, breakpoint sync, and paused-frame relay</text>
+
+  <rect x="60" y="110" width="180" height="70" rx="8" fill="#24203a" stroke="#8f7bff"/>
+  <text x="150" y="140" text-anchor="middle" fill="#c7bbff" font-size="13" font-weight="600">Debug UI</text>
+  <text x="150" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">startDebug(node)</text>
+
+  <rect x="300" y="110" width="220" height="70" rx="8" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="410" y="140" text-anchor="middle" fill="#8ff2ea" font-size="13" font-weight="600">Extension Host</text>
+  <text x="410" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">inspect port discovery</text>
+
+  <rect x="580" y="110" width="220" height="70" rx="8" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="690" y="140" text-anchor="middle" fill="#8ff2ea" font-size="13" font-weight="600">DebugService</text>
+  <text x="690" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">enable + handlers + sync BPs</text>
+
+  <rect x="860" y="110" width="180" height="70" rx="8" fill="#2c2a18" stroke="#e5c15b"/>
+  <text x="950" y="140" text-anchor="middle" fill="#ffe08c" font-size="13" font-weight="600">Node Inspect</text>
+  <text x="950" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">CDP endpoint</text>
+
+  <line x1="240" y1="145" x2="300" y2="145" stroke="#7fc7ff" stroke-width="2"/><polygon points="300,145 289,139 289,151" fill="#7fc7ff"/>
+  <line x1="520" y1="145" x2="580" y2="145" stroke="#7fc7ff" stroke-width="2"/><polygon points="580,145 569,139 569,151" fill="#7fc7ff"/>
+  <line x1="800" y1="145" x2="860" y2="145" stroke="#7fc7ff" stroke-width="2"/><polygon points="860,145 849,139 849,151" fill="#7fc7ff"/>
+
+  <rect x="90" y="240" width="920" height="250" rx="10" fill="#0d1422" stroke="#33455f"/>
+  <text x="120" y="272" fill="#9fb2ca" font-size="14" font-weight="600">Attach lifecycle</text>
+  <text x="120" y="300" fill="#9fb2ca" font-size="12">1. Connect to Node via chrome-remote-interface (CDP).</text>
+  <text x="120" y="326" fill="#9fb2ca" font-size="12">2. Register handlers before Debugger.enable to avoid missing early scriptParsed events.</text>
+  <text x="120" y="352" fill="#9fb2ca" font-size="12">3. Import VS Code breakpoints and resolve through source maps where possible.</text>
+  <text x="120" y="378" fill="#9fb2ca" font-size="12">4. Invalidate Next.js server cache and trigger debug reload/navigation in preview.</text>
+  <text x="120" y="404" fill="#9fb2ca" font-size="12">5. On Debugger.paused, map frames to original file/line and emit cdp:paused to UI.</text>
+  <text x="120" y="430" fill="#9fb2ca" font-size="12">6. UI receives wci:cdp-paused and opens editor at the selected location.</text>
+
+  <rect x="120" y="455" width="860" height="24" rx="5" fill="#2e1f1f" stroke="#ff7d7d"/>
+  <text x="550" y="472" text-anchor="middle" fill="#ffb0b0" font-size="11">Critical reliability point: pending breakpoints resolve progressively as scripts are parsed.</text>
+
+  <rect x="70" y="530" width="960" height="60" rx="8" fill="#0d1422" stroke="#33455f"/>
+  <text x="100" y="565" fill="#9fb2ca" font-size="12">Result: debugger state in the panel stays aligned with runtime execution and source-mapped editor navigation.</text>
+</svg>

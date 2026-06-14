@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight, Play, Terminal } from "lucide-react";
+import { ChevronRight, Play, Terminal, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
-
 export function Hero() {
   return (
     <section className="relative min-h-screen pt-32 flex flex-col items-center justify-center overflow-hidden px-6">
@@ -33,19 +32,23 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-          <Link
-            href="#product"
+          <a
+            href="https://forms.gle/UbYYteTvAUZSU4Rb8"
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               "group inline-flex items-center justify-center rounded-xl transition-all duration-300 active:scale-95",
-              "bg-brand-primary text-rich-black hover:bg-brand-primary/90 shadow-[0_0_15px_rgba(79,248,210,0.4)]",
-              "h-14 px-8 text-base font-semibold w-full sm:w-auto"
+              "bg-brand-primary text-rich-black hover:bg-brand-primary/90 shadow-[0_0_30px_rgba(59,130,246,0.6)]",
+              "h-14 px-8 text-base font-bold w-full sm:w-auto"
             )}
           >
-            Install Extension
-            <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="#features"
+            Join Waitlist
+            <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="https://youtu.be/xkJnywEfsog"
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               "group inline-flex items-center justify-center rounded-xl transition-all duration-300 active:scale-95",
               "glass text-white hover:bg-white/10 border-white/20",
@@ -54,7 +57,7 @@ export function Hero() {
           >
             <Play className="w-4 h-4 mr-2 fill-white group-hover:scale-110 transition-transform" />
             Watch Demo
-          </Link>
+          </a>
         </div>
       </motion.div>
 
@@ -66,15 +69,12 @@ export function Hero() {
       >
         <div className="glass rounded-3xl p-2 border-white/10 shadow-2xl relative group overflow-hidden">
           <div className="absolute inset-0 bg-futuristic-glow rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
-          <div className="relative aspect-[16/10] w-full bg-slate-900 rounded-2xl z-10 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-brand-secondary/10 to-brand-primary/10 flex items-center justify-center">
-               <div className="flex flex-col items-center gap-4">
-                  <div className="w-20 h-20 rounded-2xl bg-brand-primary/20 animate-pulse flex items-center justify-center">
-                    <Terminal className="w-10 h-10 text-brand-primary" />
-                  </div>
-                  <div className="text-white/20 font-bold tracking-widest uppercase">Inspectra v1.4.0 Engine</div>
-               </div>
-            </div>
+          <div className="relative aspect-[16/10] w-full bg-slate-900 rounded-2xl z-10 overflow-hidden border border-white/5">
+            <img 
+              src="/assets/hero.gif" 
+              alt="Inspectra Demo" 
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </div>
       </motion.div>

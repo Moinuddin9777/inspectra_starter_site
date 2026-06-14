@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1419"/>
+      <stop offset="100%" style="stop-color:#1a2332"/>
+    </linearGradient>
+    <linearGradient id="agentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="100%" style="stop-color:#ee5a24"/>
+    </linearGradient>
+    <linearGradient id="hostGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecdc4"/>
+      <stop offset="100%" style="stop-color:#2d9b93"/>
+    </linearGradient>
+    <linearGradient id="uiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a29bfe"/>
+      <stop offset="100%" style="stop-color:#6c5ce7"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#feca57"/>
+      <stop offset="100%" style="stop-color:#f39c12"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">System Architecture Overview</text>
+  <text x="600" y="68" text-anchor="middle" fill="#8899aa" font-size="13">Web Component Inspector — Four-Tier Communication Model</text>
+
+  <!-- Legend -->
+  <rect x="30" y="82" width="14" height="14" rx="3" fill="url(#agentGrad)"/>
+  <text x="50" y="94" fill="#ccd6e0" font-size="11">Browser Agent</text>
+  <rect x="160" y="82" width="14" height="14" rx="3" fill="url(#hostGrad)"/>
+  <text x="180" y="94" fill="#ccd6e0" font-size="11">Extension Host</text>
+  <rect x="310" y="82" width="14" height="14" rx="3" fill="url(#uiGrad)"/>
+  <text x="330" y="94" fill="#ccd6e0" font-size="11">DevTools UI</text>
+  <rect x="430" y="82" width="14" height="14" rx="3" fill="url(#nodeGrad)"/>
+  <text x="450" y="94" fill="#ccd6e0" font-size="11">Dev Server Node</text>
+
+  <!-- TIER 1: User App / Preview iframe -->
+  <rect x="40" y="120" width="280" height="240" rx="12" fill="#1e2a3a" stroke="#ff6b6b" stroke-width="1.5" stroke-opacity="0.6" filter="url(#shadow)"/>
+  <text x="180" y="145" text-anchor="middle" fill="#ff6b6b" font-size="12" font-weight="600">USER APP — Preview iframe</text>
+
+  <!-- Agent box -->
+  <rect x="65" y="165" width="230" height="170" rx="8" fill="url(#agentGrad)" fill-opacity="0.15" stroke="#ff6b6b" stroke-width="1"/>
+  <text x="180" y="190" text-anchor="middle" fill="#ff8787" font-size="13" font-weight="600">Browser Agent</text>
+  <text x="180" y="210" text-anchor="middle" fill="#aab5c0" font-size="10">dist/agent.js</text>
+  <rect x="80" y="225" width="200" height="24" rx="4" fill="#2a1a1a" stroke="#ff6b6b" stroke-width="0.5"/>
+  <text x="180" y="241" text-anchor="middle" fill="#ffaaaa" font-size="10">DOM Observer &amp; Tree Builder</text>
+  <rect x="80" y="257" width="200" height="24" rx="4" fill="#2a1a1a" stroke="#ff6b6b" stroke-width="0.5"/>
+  <text x="180" y="273" text-anchor="middle" fill="#ffaaaa" font-size="10">Network / Console Intercepts</text>
+  <rect x="80" y="289" width="200" height="24" rx="4" fill="#2a1a1a" stroke="#ff6b6b" stroke-width="0.5"/>
+  <text x="180" y="305" text-anchor="middle" fill="#ffaaaa" font-size="10">Framework Adapters (React/Vue/Svelte)</text>
+
+  <!-- TIER 2: Extension Host -->
+  <rect x="380" y="120" width="440" height="350" rx="12" fill="#1e2a3a" stroke="#4ecdc4" stroke-width="1.5" stroke-opacity="0.6" filter="url(#shadow)"/>
+  <text x="600" y="145" text-anchor="middle" fill="#4ecdc4" font-size="12" font-weight="600">EXTENSION HOST — VS Code Node.js</text>
+
+  <rect x="400" y="165" width="185" height="55" rx="6" fill="url(#hostGrad)" fill-opacity="0.15" stroke="#4ecdc4" stroke-width="1"/>
+  <text x="492" y="188" text-anchor="middle" fill="#7ae5dc" font-size="11" font-weight="600">WebSocket Server</text>
+  <text x="492" y="205" text-anchor="middle" fill="#8899aa" font-size="9">wsServer.ts</text>
+
+  <rect x="615" y="165" width="185" height="55" rx="6" fill="url(#hostGrad)" fill-opacity="0.15" stroke="#4ecdc4" stroke-width="1"/>
+  <text x="707" y="188" text-anchor="middle" fill="#7ae5dc" font-size="11" font-weight="600">Agent Injector Proxy</text>
+  <text x="707" y="205" text-anchor="middle" fill="#8899aa" font-size="9">agentInjector.ts</text>
+
+  <rect x="400" y="235" width="185" height="55" rx="6" fill="url(#hostGrad)" fill-opacity="0.15" stroke="#4ecdc4" stroke-width="1"/>
+  <text x="492" y="258" text-anchor="middle" fill="#7ae5dc" font-size="11" font-weight="600">Message Router</text>
+  <text x="492" y="275" text-anchor="middle" fill="#8899aa" font-size="9">message-router.ts</text>
+
+  <rect x="615" y="235" width="185" height="55" rx="6" fill="url(#hostGrad)" fill-opacity="0.15" stroke="#4ecdc4" stroke-width="1"/>
+  <text x="707" y="258" text-anchor="middle" fill="#7ae5dc" font-size="11" font-weight="600">Command Handler</text>
+  <text x="707" y="275" text-anchor="middle" fill="#8899aa" font-size="9">commandHandler.ts</text>
+
+  <rect x="400" y="305" width="185" height="55" rx="6" fill="url(#hostGrad)" fill-opacity="0.15" stroke="#4ecdc4" stroke-width="1"/>
+  <text x="492" y="328" text-anchor="middle" fill="#7ae5dc" font-size="11" font-weight="600">Component Tree Provider</text>
+  <text x="492" y="345" text-anchor="middle" fill="#8899aa" font-size="9">VS Code Sidebar</text>
+
+  <rect x="615" y="305" width="185" height="55" rx="6" fill="url(#hostGrad)" fill-opacity="0.15" stroke="#4ecdc4" stroke-width="1"/>
+  <text x="707" y="328" text-anchor="middle" fill="#7ae5dc" font-size="11" font-weight="600">Debug Service &amp; CDP</text>
+  <text x="707" y="345" text-anchor="middle" fill="#8899aa" font-size="9">src/cdp/</text>
+
+  <!-- TIER 3: DevTools UI -->
+  <rect x="380" y="490" width="440" height="185" rx="12" fill="#1e2a3a" stroke="#a29bfe" stroke-width="1.5" stroke-opacity="0.6" filter="url(#shadow)"/>
+  <text x="600" y="515" text-anchor="middle" fill="#a29bfe" font-size="12" font-weight="600">DEVTOOLS UI — /__devtools__ Page</text>
+
+  <rect x="400" y="535" width="130" height="55" rx="6" fill="url(#uiGrad)" fill-opacity="0.15" stroke="#a29bfe" stroke-width="1"/>
+  <text x="465" y="558" text-anchor="middle" fill="#c4b5fd" font-size="11" font-weight="600">IIFE Bridge</text>
+  <text x="465" y="575" text-anchor="middle" fill="#8899aa" font-size="9">websocket.ts</text>
+
+  <rect x="545" y="535" width="130" height="55" rx="6" fill="url(#uiGrad)" fill-opacity="0.15" stroke="#a29bfe" stroke-width="1"/>
+  <text x="610" y="558" text-anchor="middle" fill="#c4b5fd" font-size="11" font-weight="600">React Panels</text>
+  <text x="610" y="575" text-anchor="middle" fill="#8899aa" font-size="9">src/devtools/</text>
+
+  <rect x="690" y="535" width="115" height="55" rx="6" fill="url(#uiGrad)" fill-opacity="0.15" stroke="#a29bfe" stroke-width="1"/>
+  <text x="747" y="558" text-anchor="middle" fill="#c4b5fd" font-size="11" font-weight="600">Preview Host</text>
+  <text x="747" y="575" text-anchor="middle" fill="#8899aa" font-size="9">iframe</text>
+
+  <rect x="400" y="605" width="395" height="50" rx="6" fill="#1a1530" stroke="#a29bfe" stroke-width="0.5"/>
+  <text x="597" y="627" text-anchor="middle" fill="#b8a9fe" font-size="10">Tabs: Inspector | Console | Network | Performance | Coverage | Cookies | Debug | A11y</text>
+  <text x="597" y="643" text-anchor="middle" fill="#8899aa" font-size="9">CustomEvents bridge (wci:*) — React hooks (useWebSocket, useConsole, useNetwork...)</text>
+
+  <!-- TIER 4: Dev Server -->
+  <rect x="880" y="120" width="280" height="160" rx="12" fill="#1e2a3a" stroke="#feca57" stroke-width="1.5" stroke-opacity="0.6" filter="url(#shadow)"/>
+  <text x="1020" y="145" text-anchor="middle" fill="#feca57" font-size="12" font-weight="600">DEV SERVER — Node Process</text>
+
+  <rect x="905" y="170" width="230" height="40" rx="6" fill="url(#nodeGrad)" fill-opacity="0.12" stroke="#feca57" stroke-width="0.8"/>
+  <text x="1020" y="195" text-anchor="middle" fill="#ffe066" font-size="11">Next.js / Vite / Webpack (user app)</text>
+
+  <rect x="905" y="222" width="230" height="40" rx="6" fill="url(#nodeGrad)" fill-opacity="0.12" stroke="#feca57" stroke-width="0.8"/>
+  <text x="1020" y="247" text-anchor="middle" fill="#ffe066" font-size="11">Node --inspect (debug port 9229)</text>
+
+  <!-- Connection arrows -->
+  <!-- Agent ↔ WS Server -->
+  <path d="M 295 250 C 340 250 340 192 400 192" fill="none" stroke="#ff9f7f" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <path d="M 400 192 C 340 192 340 260 295 260" fill="none" stroke="#7ae5dc" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- WS ↔ UI IIFE -->
+  <path d="M 492 220 L 492 490" fill="none" stroke="#78d4cb" stroke-width="2"/>
+  <circle cx="492" cy="355" r="3" fill="#78d4cb"/>
+
+  <!-- Router ↔ Tree -->
+  <path d="M 492 275 L 492 305" fill="none" stroke="#4ecdc4" stroke-width="1.5"/>
+
+  <!-- CDP ↔ Node -->
+  <path d="M 800 332 L 880 242" fill="none" stroke="#feca57" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="850" y="275" fill="#feca57" font-size="9" transform="rotate(-30 850 275)">CDP</text>
+
+  <!-- Proxy → Agent (injection) -->
+  <path d="M 615 192 C 500 130 350 130 250 165" fill="none" stroke="#4ecdc4" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="430" y="125" fill="#7ae5dc" font-size="9">injects agent.js</text>
+
+  <!-- Proxy → Dev Server -->
+  <path d="M 800 192 L 880 192" fill="none" stroke="#7ae5dc" stroke-width="1.5"/>
+  <text x="840" y="183" fill="#7ae5dc" font-size="9">proxy</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#ff9f7f" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- Flow labels on arrows -->
+  <rect x="305" y="220" width="65" height="18" rx="3" fill="#2d1f1f"/>
+  <text x="337" y="233" text-anchor="middle" fill="#ff9f7f" font-size="8">agent msgs</text>
+
+  <rect x="425" y="405" width="95" height="18" rx="3" fill="#1a2525"/>
+  <text x="472" y="418" text-anchor="middle" fill="#7ae5dc" font-size="8">viewer commands</text>
+
+  <!-- Data flow annotation -->
+  <rect x="40" y="620" width="300" height="55" rx="8" fill="#1a2332" stroke="#445566" stroke-width="0.8"/>
+  <text x="60" y="640" fill="#8899aa" font-size="10" font-weight="600">Data Flow Pattern:</text>
+  <text x="60" y="656" fill="#ff9f7f" font-size="9">Agent → host msg → Router → relay to viewers</text>
+  <text x="60" y="670" fill="#c4b5fd" font-size="9">UI → viewer:command → Handler → host msg → Agent</text>
+</svg>

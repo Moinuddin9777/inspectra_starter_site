@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { ComingSoon } from "@/components/ComingSoon";
 import { ProductReveal } from "@/components/ProductReveal";
 import { TechnicalAchievements } from "@/components/TechnicalAchievements";
 import { Architecture } from "@/components/Architecture";
@@ -12,6 +13,7 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <Features />
+      <ComingSoon />
       <ProductReveal />
       <TechnicalAchievements />
       <Architecture />

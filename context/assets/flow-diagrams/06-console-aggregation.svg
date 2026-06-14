@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="540" fill="#101826"/>
+  <text x="550" y="42" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700">Console Log Aggregation</text>
+  <text x="550" y="66" text-anchor="middle" fill="#8ea0b8" font-size="13">Three sources merged into one filtered stream for ConsolePanel</text>
+
+  <rect x="70" y="120" width="260" height="70" rx="8" fill="#2e1f1f" stroke="#ff7d7d"/>
+  <text x="200" y="147" text-anchor="middle" fill="#ffb0b0" font-size="14" font-weight="600">Source A: App Console</text>
+  <text x="200" y="166" text-anchor="middle" fill="#9ba8ba" font-size="11">interceptConsole -> agent:console</text>
+
+  <rect x="70" y="215" width="260" height="70" rx="8" fill="#2c2a18" stroke="#e5c15b"/>
+  <text x="200" y="242" text-anchor="middle" fill="#ffe08c" font-size="14" font-weight="600">Source B: Dev Server IO</text>
+  <text x="200" y="261" text-anchor="middle" fill="#9ba8ba" font-size="11">stdout/stderr, 80ms debounce</text>
+
+  <rect x="70" y="310" width="260" height="70" rx="8" fill="#24203a" stroke="#8f7bff"/>
+  <text x="200" y="337" text-anchor="middle" fill="#c7bbff" font-size="14" font-weight="600">Source C: IIFE Internals</text>
+  <text x="200" y="356" text-anchor="middle" fill="#9ba8ba" font-size="11">wci:log CustomEvent</text>
+
+  <rect x="430" y="185" width="260" height="130" rx="10" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="560" y="220" text-anchor="middle" fill="#8ff2ea" font-size="15" font-weight="700">Host + Bridge Merge</text>
+  <text x="560" y="245" text-anchor="middle" fill="#9ba8ba" font-size="12">extension:console and wci:log</text>
+  <text x="560" y="268" text-anchor="middle" fill="#9ba8ba" font-size="12">normalization + source tags</text>
+  <text x="560" y="291" text-anchor="middle" fill="#9ba8ba" font-size="12">single stream to UI</text>
+
+  <rect x="790" y="185" width="240" height="130" rx="10" fill="#24203a" stroke="#8f7bff"/>
+  <text x="910" y="220" text-anchor="middle" fill="#c7bbff" font-size="15" font-weight="700">useConsole Hook</text>
+  <text x="910" y="245" text-anchor="middle" fill="#9ba8ba" font-size="12">FIFO cap 200 entries</text>
+  <text x="910" y="268" text-anchor="middle" fill="#9ba8ba" font-size="12">level + search filters</text>
+  <text x="910" y="291" text-anchor="middle" fill="#9ba8ba" font-size="12">ConsolePanel render</text>
+
+  <line x1="330" y1="155" x2="430" y2="205" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="430,205 420,197 418,210" fill="#7fc7ff"/>
+  <line x1="330" y1="250" x2="430" y2="250" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="430,250 419,244 419,256" fill="#7fc7ff"/>
+  <line x1="330" y1="345" x2="430" y2="295" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="430,295 418,290 420,303" fill="#7fc7ff"/>
+
+  <line x1="690" y1="250" x2="790" y2="250" stroke="#ffb36b" stroke-width="2"/>
+  <polygon points="790,250 779,244 779,256" fill="#ffb36b"/>
+
+  <rect x="70" y="430" width="960" height="75" rx="10" fill="#0d1422" stroke="#33455f"/>
+  <text x="100" y="460" fill="#9fb2ca" font-size="13" font-weight="600">Outcome</text>
+  <text x="100" y="485" fill="#9fb2ca" font-size="12">Logs from app runtime, dev server process, and internal bridge diagnostics appear in one timeline with consistent filtering behavior.</text>
+</svg>

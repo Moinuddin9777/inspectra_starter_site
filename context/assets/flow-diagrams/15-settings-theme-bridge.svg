@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="560" fill="#101826"/>
+  <text x="550" y="42" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700">Settings and Theme Bridge</text>
+  <text x="550" y="66" text-anchor="middle" fill="#8ea0b8" font-size="13">Persistent settings, CSS variables, and system theme synchronization</text>
+
+  <rect x="70" y="110" width="230" height="80" rx="8" fill="#24203a" stroke="#8f7bff"/>
+  <text x="185" y="140" text-anchor="middle" fill="#c7bbff" font-size="14" font-weight="600">DevTools Mount</text>
+  <text x="185" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">initThemeBridge()</text>
+  <text x="185" y="176" text-anchor="middle" fill="#9ba8ba" font-size="11">read localStorage settings</text>
+
+  <rect x="420" y="110" width="260" height="80" rx="8" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="550" y="140" text-anchor="middle" fill="#8ff2ea" font-size="14" font-weight="600">Theme Bridge Logic</text>
+  <text x="550" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">applyTheme(mode)</text>
+  <text x="550" y="176" text-anchor="middle" fill="#9ba8ba" font-size="11">listen for wci:settings-changed</text>
+
+  <rect x="800" y="110" width="230" height="80" rx="8" fill="#2c2a18" stroke="#e5c15b"/>
+  <text x="915" y="140" text-anchor="middle" fill="#ffe08c" font-size="14" font-weight="600">DOM + CSS Vars</text>
+  <text x="915" y="160" text-anchor="middle" fill="#9ba8ba" font-size="11">LIGHT/DARK variable sets</text>
+  <text x="915" y="176" text-anchor="middle" fill="#9ba8ba" font-size="11">global classes toggled</text>
+
+  <line x1="300" y1="150" x2="420" y2="150" stroke="#7fc7ff" stroke-width="2"/><polygon points="420,150 409,144 409,156" fill="#7fc7ff"/>
+  <line x1="680" y1="150" x2="800" y2="150" stroke="#7fc7ff" stroke-width="2"/><polygon points="800,150 789,144 789,156" fill="#7fc7ff"/>
+
+  <rect x="90" y="250" width="920" height="220" rx="10" fill="#0d1422" stroke="#33455f"/>
+  <text x="120" y="282" fill="#9fb2ca" font-size="14" font-weight="600">Bridge behavior details</text>
+  <text x="120" y="310" fill="#9fb2ca" font-size="12">1. SettingsPanel Save emits wci:settings-changed with new persisted state.</text>
+  <text x="120" y="336" fill="#9fb2ca" font-size="12">2. Bridge updates CSS custom properties and ThemeProvider context.</text>
+  <text x="120" y="362" fill="#9fb2ca" font-size="12">3. html classes high-contrast and reduce-motion are toggled for accessibility.</text>
+  <text x="120" y="388" fill="#9fb2ca" font-size="12">4. If mode=system, matchMedia(prefers-color-scheme) listener re-applies on OS change.</text>
+  <text x="120" y="414" fill="#9fb2ca" font-size="12">5. Result is immediate visual update without full page reload.</text>
+
+  <rect x="120" y="435" width="860" height="24" rx="5" fill="#24203a" stroke="#8f7bff"/>
+  <text x="550" y="452" text-anchor="middle" fill="#c7bbff" font-size="11">Single source of truth: localStorage key wci-devtools-settings.</text>
+
+  <rect x="70" y="490" width="960" height="50" rx="8" fill="#0d1422" stroke="#33455f"/>
+  <text x="100" y="520" fill="#9fb2ca" font-size="12">This bridge keeps design system state, OS preferences, and panel controls synchronized in real time.</text>
+</svg>

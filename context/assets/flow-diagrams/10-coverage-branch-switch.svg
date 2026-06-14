@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="500" fill="#101826"/>
+  <text x="550" y="42" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700">Coverage Branch Switch Flow</text>
+  <text x="550" y="66" text-anchor="middle" fill="#8ea0b8" font-size="13">Branch checkout, pull, and automatic coverage refresh</text>
+
+  <rect x="70" y="120" width="220" height="75" rx="8" fill="#24203a" stroke="#8f7bff"/>
+  <text x="180" y="150" text-anchor="middle" fill="#c7bbff" font-size="14" font-weight="600">GitBranchContext UI</text>
+  <text x="180" y="170" text-anchor="middle" fill="#9ba8ba" font-size="11">switchGitBranch(branch)</text>
+
+  <rect x="430" y="120" width="220" height="75" rx="8" fill="#162c2a" stroke="#46d4c8"/>
+  <text x="540" y="150" text-anchor="middle" fill="#8ff2ea" font-size="14" font-weight="600">Extension Host</text>
+  <text x="540" y="170" text-anchor="middle" fill="#9ba8ba" font-size="11">delegates to core/git.ts</text>
+
+  <rect x="790" y="120" width="240" height="75" rx="8" fill="#2c2a18" stroke="#e5c15b"/>
+  <text x="910" y="150" text-anchor="middle" fill="#ffe08c" font-size="14" font-weight="600">Git Operations</text>
+  <text x="910" y="170" text-anchor="middle" fill="#9ba8ba" font-size="11">validate -> checkout -> pull</text>
+
+  <line x1="290" y1="157" x2="430" y2="157" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="430,157 419,151 419,163" fill="#7fc7ff"/>
+  <line x1="650" y1="157" x2="790" y2="157" stroke="#7fc7ff" stroke-width="2"/>
+  <polygon points="790,157 779,151 779,163" fill="#7fc7ff"/>
+
+  <rect x="140" y="250" width="820" height="180" rx="10" fill="#0d1422" stroke="#33455f"/>
+  <text x="170" y="282" fill="#9fb2ca" font-size="14" font-weight="600">Post-switch behavior</text>
+  <text x="170" y="310" fill="#9fb2ca" font-size="12">1. Host emits extension:git-branch-switched -> wci:git-branch-switched.</text>
+  <text x="170" y="336" fill="#9fb2ca" font-size="12">2. Coverage pipeline is re-triggered for the new branch baseline.</text>
+  <text x="170" y="362" fill="#9fb2ca" font-size="12">3. UI receives fresh extension:coverage-data and updates trend/KPIs.</text>
+  <text x="170" y="388" fill="#9fb2ca" font-size="12">4. Branch-aware comparisons become consistent with checked out workspace state.</text>
+
+  <rect x="70" y="450" width="960" height="34" rx="8" fill="#0d1422" stroke="#33455f"/>
+  <text x="100" y="472" fill="#9fb2ca" font-size="12">Guardrail: branch names are validated before checkout to avoid unsafe shell invocation.</text>
+</svg>

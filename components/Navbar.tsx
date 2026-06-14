@@ -18,6 +18,7 @@ export function Navbar() {
             <Search className="w-5 h-5 text-rich-black" />
           </div>
           <span className="text-xl font-bold tracking-tighter text-white">INSPECTRA</span>
+          <span className="bg-brand-primary/20 text-brand-primary text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ml-1 border border-brand-primary/30">Beta</span>
         </Link>
         
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-white/60">
@@ -29,7 +30,7 @@ export function Navbar() {
         <div className="h-4 w-[1px] bg-white/10 hidden md:block" />
 
         <Link
-          href="#features"
+          href="/docs"
           className={cn(
             "hidden md:inline-flex items-center justify-center rounded-xl transition-all duration-300 active:scale-95",
             "glass text-white hover:bg-white/10 border-white/20",
@@ -37,16 +38,6 @@ export function Navbar() {
           )}
         >
           Docs
-        </Link>
-        <Link
-          href="#product"
-          className={cn(
-            "inline-flex items-center justify-center rounded-xl transition-all duration-300 active:scale-95",
-            "bg-brand-primary text-rich-black hover:bg-brand-primary/90 shadow-[0_0_15px_rgba(79,248,210,0.4)]",
-            "h-9 px-4 text-xs font-medium"
-          )}
-        >
-          Get Started
         </Link>
       </nav>
     </motion.header>
